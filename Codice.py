@@ -234,7 +234,7 @@ class SimulaProduzione(tk.Tk):
             tempi = tempi_unitari_config.get(nome, {})
             tempo_unitario_totale = sum(tempi.values())
             capacita_max_pezzi = capacita_per_tipo.get(nome, 0) 
-            self.tree.insert('', 'end', values=(nome, f"{capacita_max_pezzi:,}", quantita, round(tempo_unitario_totale, 2)))
+            self.tree.insert('', 'end', values=(nome, capacita_max_pezzi, quantita, round(tempo_unitario_totale, 2)))
  
         # Aggiorna Dettaglio per Fase (fase_tree) - Aggiorna gli elementi esistenti della seconda tabella
         for fase, item_id in self.fase_tree_items.items():
@@ -251,3 +251,4 @@ class SimulaProduzione(tk.Tk):
 if __name__ == "__main__":
     app = SimulaProduzione(TAPPI)
     app.mainloop()
+
